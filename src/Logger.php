@@ -47,7 +47,7 @@ class Logger implements ILogger
 		}
 
 		$this->monolog->addRecord(
-            (in_array(self::PRIORITY_MAP[$priority], )) ? self::PRIORITY_MAP[$priority] : Monolog\Logger::ERROR,
+            (in_array($message, self::PRIORITY_MAP)) ? self::PRIORITY_MAP[$priority] : Monolog\Logger::ERROR,
 			$message,
 			$context
 		);
