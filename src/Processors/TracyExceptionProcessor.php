@@ -21,7 +21,7 @@ class TracyExceptionProcessor
 	private $blueScreen;
 
 
-	public function __construct(string $logDirectory, BlueScreen $blueScreen)
+	public function __construct($logDirectory, BlueScreen $blueScreen)
 	{
 		$this->directory = $logDirectory;
 		$this->blueScreen = $blueScreen;
@@ -46,7 +46,7 @@ class TracyExceptionProcessor
 	 * @author David Grudl
 	 * @see    https://github.com/nette/tracy
 	 */
-	protected function logException(Throwable $exception): array
+	protected function logException(Throwable $exception)
 	{
 		$file = $this->getExceptionFile($exception);
 		if ($handle = @fopen($file, 'x')) { // @ file may already exist
@@ -67,7 +67,7 @@ class TracyExceptionProcessor
 	 * @author David Grudl
 	 * @see    https://github.com/nette/tracy
 	 */
-	private function getExceptionFile(Throwable $exception): string
+	private function getExceptionFile(Throwable $exception)
 	{
 		$dir = strtr($this->directory . '/', '\\/', DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR);
 		$hash = substr(md5(preg_replace('~(Resource id #)\d+~', '$1', $exception)), 0, 10);
@@ -84,7 +84,7 @@ class TracyExceptionProcessor
 	 * @author David Grudl
 	 * @see    https://github.com/nette/tracy
 	 */
-	protected static function formatMessage(Throwable $message): string
+	protected static function formatMessage(Throwable $message)
 	{
 		$tmp = [];
 		while ($message) {

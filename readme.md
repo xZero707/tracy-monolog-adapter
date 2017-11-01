@@ -1,16 +1,24 @@
 Nextras Tracy-Monolog Adapter
 =============================
 
-[![Downloads this Month](https://img.shields.io/packagist/dm/nextras/tracy-monolog-adapter.svg?style=flat)](https://packagist.org/packages/nextras/tracy-monolog-adapter)
-[![Stable version](http://img.shields.io/packagist/v/nextras/tracy-monolog-adapter.svg?style=flat)](https://packagist.org/packages/nextras/tracy-monolog-adapter)
+[![Downloads this Month](https://img.shields.io/packagist/dm/xzero707/tracy-monolog-adapter.svg?style=flat)](https://packagist.org/packages/xzero707/tracy-monolog-adapter)
+[![Stable version](http://img.shields.io/packagist/v/xzero707/tracy-monolog-adapter.svg?style=flat)](https://packagist.org/packages/xzero707/tracy-monolog-adapter)
 
 ### Installation
 
 Use composer:
 
 ```bash
-$ composer require nextras/tracy-monolog-adapter
+$ composer require xzero707/tracy-monolog-adapter
 ```
+### Supports
+   * ^PHP5.6
+   * \>=PHP7.0
+
+### Note
+This package is no different than nextras/tracy-monolog-adapter, but it provides backward compatibility for PHP5.6. 
+
+It cannot be used alongside nextras/tracy-monolog-adapter.
 
 ### License
 

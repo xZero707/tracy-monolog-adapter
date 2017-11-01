@@ -1,18 +1,33 @@
 {
-	"name": "nextras/tracy-monolog-adapter",
+	"name": "xzero707/tracy-monolog-adapter",
 	"type": "library",
-	"description": "Nextras Tracy-Monolog Adapter",
-	"keywords": ["monolog", "nette", "nextras", "logger"],
-	"homepage": "https://github.com/nextras/tracy-monolog-adapter",
+	"description": "Originally, Nextras Tracy-Monolog Adapter, but this supports PHP5.6",
+	"keywords": [
+		"monolog",
+		"nette",
+		"nextras",
+		"logger",
+		"xzero707"
+	],
+	"homepage": "https://github.com/xzero707/tracy-monolog-adapter",
 	"license": "BSD-3-Clause",
 	"authors": [
-		{ "name": "Nextras Project", "homepage": "https://github.com/nextras/tracy-monolog-adapter/graphs/contributors" }
+		{
+			"name": "Nextras Project",
+			"homepage": "https://github.com/nextras/tracy-monolog-adapter/graphs/contributors"
+		},
+		{
+			"name": "Aleksandar Puharic",
+			"email": "xzero@elite7hackers.net",
+			"homepage": "https://www.elite7hackers.net",
+			"role": "Back-end developer"
+		}
 	],
 	"support": {
 		"issues": "https://github.com/nextras/tracy-monolog-adapter/issues"
 	},
 	"require": {
-		"php": ">=7.0",
+		"php": "^5.6|>=7.0",
 		"tracy/tracy": "~2.3",
 		"monolog/monolog": "~1.9"
 	},
@@ -20,11 +35,16 @@
 		"nette/di": "~2.2"
 	},
 	"autoload": {
-		"psr-4": { "Nextras\\TracyMonologAdapter\\": "src/" }
+		"psr-4": {
+			"Nextras\\TracyMonologAdapter\\": "src/"
+		}
 	},
 	"extra": {
 		"branch-alias": {
 			"dev-master": "0.1-dev"
 		}
+	},
+	"conflict": {
+		"nextras/tracy-monolog-adapter": "*"
 	}
 }

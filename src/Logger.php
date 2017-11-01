@@ -17,12 +17,12 @@ class Logger implements ILogger
 {
 	/** @const Tracy priority to Monolog priority mapping */
 	const PRIORITY_MAP = [
-		self::DEBUG => Monolog\Logger::DEBUG,
-		self::INFO => Monolog\Logger::INFO,
-		self::WARNING => Monolog\Logger::WARNING,
-		self::ERROR => Monolog\Logger::ERROR,
-		self::EXCEPTION => Monolog\Logger::CRITICAL,
-		self::CRITICAL => Monolog\Logger::CRITICAL,
+        ILogger::DEBUG => Monolog\Logger::DEBUG,
+        ILogger::INFO => Monolog\Logger::INFO,
+        ILogger::WARNING => Monolog\Logger::WARNING,
+        ILogger::ERROR => Monolog\Logger::ERROR,
+        ILogger::EXCEPTION => Monolog\Logger::CRITICAL,
+        ILogger::CRITICAL => Monolog\Logger::CRITICAL,
 	];
 
 	/** @var Monolog\Logger */
@@ -35,7 +35,7 @@ class Logger implements ILogger
 	}
 
 
-	public function log($message, $priority = self::INFO)
+	public function log($message, $priority = ILogger::INFO)
 	{
 		$context = [
 			'at' => Helpers::getSource(),
@@ -47,7 +47,7 @@ class Logger implements ILogger
 		}
 
 		$this->monolog->addRecord(
-			self::PRIORITY_MAP[$priority] ?? Monolog\Logger::ERROR,
+            (in_array(self::PRIORITY_MAP[$priority], )) ? self::PRIORITY_MAP[$priority] : Monolog\Logger::ERROR,
 			$message,
 			$context
 		);
